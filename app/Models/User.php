@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -8,6 +8,8 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    public $incrementing = false;
+
     use Notifiable;
 
     /**
@@ -16,9 +18,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'id','username', 'openid', 'password','role_id',
+        'verder_type','status','mobile','login_ip'
     ];
-
     /**
      * The attributes that should be hidden for arrays.
      *
